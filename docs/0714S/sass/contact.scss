@@ -1,0 +1,405 @@
+@charset "utf-8";
+@import "_setting_mixin";
+
+
+/*　base------------------------------------------------------------*/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    color: $base-color;
+    font-family: $base-font;
+    line-height: 1.5;
+
+    @include mq {
+        font-size: 1.4rem;
+    }
+}
+
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+.containerH {
+    padding: 120px 0;
+
+    @include mq(tab) {
+        padding: 80px 0;
+    }
+
+}
+
+.containerW {
+    max-width: $main-width;
+    margin: 0 auto;
+    padding: 0 4vw;
+}
+
+.section-title {
+    font-size: 3.2rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin-bottom: 30px;
+
+    @include mq {
+        font-size: 2.8rem;
+    }
+}
+
+.btn {
+    @include btn;
+    margin-top: 30px;
+}
+
+.txt {
+    line-height: 2;
+}
+
+/*　header------------------------------------------------------------*/
+header {
+    padding: 27px 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.header-inner {
+    max-width: $sub-width;
+    margin: 0 auto;
+    padding: 0 4vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    width: 266px;
+
+    @include mq(tab) {
+        width: 189px;
+    }
+}
+
+.burger-btn-wp {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+
+    .burger-btn {
+        margin-right: 7px;
+    }
+
+    .bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 1px;
+    }
+
+    .bar-top,
+    .bar-mid {
+        margin-bottom: 3px;
+    }
+
+    .menu {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #fff;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.header-nav {
+    display: none;
+    width: 40%;
+    height: 100vh;
+    min-height: 550px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    background-color: $btn-color;
+
+    .header-nav-list {
+        padding: 180px 0;
+        text-align: center;
+    }
+
+    .header-nav-item {
+        margin-bottom: 30px;
+
+        a {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+
+    @include mq {
+        width: 100%;
+    }
+}
+
+
+/*　fv------------------------------------------------------------*/
+.fv {
+    height: 60vh;
+    min-height: 450px;
+    position: relative;
+
+    .fv-inner {
+        width: 76%;
+        height: 86%;
+        background-image: url(../images/contactpage-img.jpg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+
+        @include mq {
+            background-position: bottom right;
+        }
+        @include mq{
+            background-position: left center;
+        }
+    }
+
+    .fv-txt {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%);
+        color: #fff;
+
+        @include mq(tab) {
+            transform: translate(40%, -50%);
+        }
+
+        @include mq {
+            transform: translate(20%, -50%);
+        }
+    }
+
+    .txt-small {
+        font-size: 2rem;
+
+        @include mq(tab) {
+            font-size: 1.6rem;
+        }
+    }
+
+    .txt-big {
+        font-size: 7.2rem;
+        font-weight: bold;
+        line-height: 1.2;
+
+        @include mq(tab) {
+            font-size: 5.6rem;
+        }
+
+        @include mq {
+            font-size: 4rem;
+        }
+    }
+
+    position: relative;
+
+    &::after {
+        display: block;
+        content: "";
+        background-color: $btn-color;
+        width: 50%;
+        height: 60vh;
+        min-height: 450px;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+}
+.scroll{
+    display: none;
+    position: absolute;
+    bottom: -14px;
+    left: 4vw;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
+
+    &::after{
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 118px;
+        height: 1px;
+        background-color: #000;
+        margin-left: 8px;
+     }
+    @include mq{
+        display: block;
+       
+    }
+
+}
+
+
+/*　form------------------------------------------------------------*/
+
+form{
+    max-width: 700px;
+    margin: 0 auto;
+}
+.form-lead{
+    margin-bottom: 50px;
+}
+.form-item{
+    margin-bottom: 40px;
+}
+.form-title{
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+.required{
+    background-color: #333;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 2px 5px;
+    margin-left: 10px;
+}
+
+input,
+textarea {
+    outline: none;
+    appearance: none;
+    resize: none;
+    width: 100%;
+    border: 1px solid #333333;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+input {
+    line-height: 41px;
+}
+textarea{
+    line-height: 2;
+    height: 212px;
+}
+
+// radio
+.radio-title {
+    margin-bottom: 18px;
+}
+.radio-list {
+    display: flex;
+    @include mq{
+        flex-direction: column;
+    }
+}
+.radio-item {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    @include mq{
+        margin-bottom: 15px;
+    }
+}
+input[type=radio] {
+    width: auto;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #333;
+
+    margin-right: 10px;
+}
+input[type=radio]:checked {
+    box-shadow: 0 0 0 1px #333;
+    background-color: #333;
+}
+
+// privacy
+.privacy-inner {
+    border: 1px solid #333333;
+    height: 252px;
+    overflow: scroll;
+    padding: 10px;
+
+    margin-bottom: 40px;
+    @include mq{
+        height: 226px;
+    }
+}
+
+/* check */
+.check-wp {
+    max-width: 413px;
+    display: flex;
+    align-items: center;
+
+    margin: 0 auto 40px;
+}
+
+.check-wp input {
+    width: auto;
+    width: 20px;
+    height: 20px;
+
+    margin-right: 10px;
+}
+
+.check-wp input:checked {
+    background-image: url(../images/icon_chek.svg);
+    background-size: cover;
+}
+/* btn */
+.btn-wp {
+    text-align: center;
+}
+
+.form-btn {
+    @include btn;
+    width: 160px;
+    margin: 0 auto;
+}
+
+button:hover {
+    opacity: .7;
+    transform: .3s;
+    cursor: pointer;
+}
+
+
+/*　footer------------------------------------------------------------*/
+
+footer {
+    background-color: $btn-color;
+    padding: 19px 0;
+    text-align: center;
+
+    small {
+        font-size: 1rem;
+        color: #fff;
+    }
+}

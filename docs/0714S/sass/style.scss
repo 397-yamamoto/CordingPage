@@ -1,0 +1,379 @@
+
+@charset "utf-8";
+@import "_setting_mixin";
+
+
+/*　base------------------------------------------------------------*/
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    color: $base-color;
+    font-family: $base-font;
+    line-height: 1.5;
+
+    @include mq{
+        font-size: 1.4rem;
+    }
+}
+img{
+    width: 100%;
+    vertical-align: bottom;
+}
+a{
+    text-decoration: none;
+    display: block;
+}
+
+.containerH{
+    padding:60px 0;
+    &:first-of-type{
+        padding-top: 120px;
+    }
+    &:last-of-type{
+        padding-bottom: 120px;
+    }
+
+    @include mq(tab){
+        padding: 80px 0;
+    }
+    @include mq{
+        &:first-of-type {
+            padding-top: 78px;
+        }
+
+        &:last-of-type {
+            padding-bottom: 40px;
+        }
+        padding: 40px 0;
+    }
+}
+.containerW{
+    max-width: $main-width;
+    margin: 0 auto;
+    padding: 0 4vw;
+}
+.section-title{
+    font-size: 3.2rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin-bottom: 30px;
+
+    @include mq{
+        font-size: 2.8rem;
+    }
+}
+.btn{
+    @include btn;
+    margin-top: 30px;
+}
+
+/*　header------------------------------------------------------------*/
+header{
+    padding: 27px 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+.header-inner{
+    max-width: $sub-width;
+    margin: 0 auto;
+    padding: 0 4vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-logo{
+    width: 266px;
+    @include mq(tab){
+        width: 189px;
+    }
+}
+.burger-btn-wp{
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    .burger-btn{
+        margin-right: 7px;
+    }
+    .bar{
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 1px;
+    }
+    .bar-top,
+    .bar-mid{
+        margin-bottom: 3px;
+    }
+    .menu{
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #fff;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+.header-nav{
+    display: none;
+    width: 40%;
+    height: 100vh;
+    min-height: 550px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    background-color: $btn-color;
+
+    .header-nav-list{
+        padding: 180px 0;
+        text-align: center;
+    }
+    .header-nav-item{
+        margin-bottom: 30px;
+        a{
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+    @include mq{
+        width: 100%;
+    }
+}
+
+
+/*　fv------------------------------------------------------------*/
+.fv{
+    height: 100vh;
+    min-height: 550px;
+    
+    .fv-inner{
+        width: 76%;
+        height: 86%;
+        background-image: url(../images/fv-img.jpg);
+        background-size: cover;
+        background-position: center 0;
+        position: relative;
+
+        @include mq{
+            background-position: bottom right;
+        }
+    }
+    .fv-txt{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(50%,-50%);
+        color: #fff;
+
+        @include mq(tab){
+            transform: translate(40%,-50%);
+        }
+        @include mq{
+            transform: translate(20%,-50%);
+        }
+    }
+    .txt-small{
+        font-size: 2rem;
+
+        @include mq(tab){
+            font-size: 1.6rem;
+        }
+    }
+    .txt-big{
+        font-size: 7.2rem;
+        font-weight: bold;
+        line-height: 1.2;
+
+        @include mq(tab){
+            font-size: 5.6rem;
+        }
+        @include mq{
+            font-size: 4rem;
+        }
+    }
+    position: relative;
+    &::after{
+        content: "";
+        display: block;
+        width: 50%;
+        height: 100%;
+        background-color: $btn-color;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+}
+
+/*　about------------------------------------------------------------*/
+#about{
+    .containerW{
+        background-image: url(../images/about-img.jpg);
+        @include bgs;
+        padding: 110px 0 110px 50px;
+        box-sizing: border-box;
+
+        @include mq(tab){
+            padding: 60px 10%;
+        }
+        @include mq{
+            padding: 50px 4vw;
+        }
+    }
+    position: relative;
+    &::after{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 180px;
+        background-color: $bg-color;
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+    }
+}
+.about-inner{
+    background-color: rgba(#fff,.95);
+    max-width: 590px;
+    padding: 50px 30px;
+    box-sizing: border-box;
+
+    @include mq{
+        width: 100%;
+    }
+}
+.about-txt{
+    line-height: 2;
+}
+
+/*　works culture------------------------------------------------------------*/
+.section-wpH{
+    padding-top: 0;
+    padding: 0 0 60px;
+    background-color: $bg-color;
+}
+.section-wp{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#works,
+#culture {
+    max-width: 520px;
+    .txt{
+        margin-top: 30px;
+    }
+}
+#works{
+    margin-right: 60px;
+    @include mq(tab){
+        margin-right: 0;
+        margin-bottom: 80px;
+    }
+    @include mq{
+        margin-bottom: 40px;
+    }
+}
+
+/*　topic------------------------------------------------------------*/
+#topics{
+    .containerH {
+        @include mq{
+            padding: 40px 0;
+        }
+    }
+}
+
+.topic-list{
+    max-width: 700px;
+    margin-left: auto;
+    .btn {
+        margin-left: auto;
+        @include mq(tab){
+            margin: 0 auto 0 0;
+        }
+    }
+}
+.topic-item{
+    time{
+        color: $time-color;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    .topic-txt{
+        font-size: 1.4rem;
+        color: $base-color;
+        padding: 12px 0;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+
+        @include mq{
+            font-size: 1.2rem;
+        }
+    }
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+/*　contact------------------------------------------------------------*/
+#contact{
+    .containerH{
+        background-color: $bg-color;
+        @include mq(tab){
+            padding: 40px 0 80px;
+        }
+        @include mq{
+            padding: 40px 0;
+        }
+    }
+    .containerW{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        @include mq(tab){
+            justify-content: start;
+            flex-direction: column-reverse;
+        }
+    }
+}
+.contact-inner{
+    &:nth-of-type(1){
+        max-width: 440px;
+        margin-right: 80px;
+        @include mq(tab){
+            margin-right: 0;
+            max-width: 510px;
+        }
+    }
+    &:nth-of-type(2){
+        max-width: 580px;
+        @include mq(tab) {
+            margin-bottom: 30px;
+        }
+    }
+}
+.contact-txt{
+    line-height: 2;
+}
+
+/*　footer------------------------------------------------------------*/
+
+footer{
+    background-color: $btn-color;
+    padding: 19px 0;
+    text-align: center;
+    small{
+        font-size: 1rem;
+        color: #fff;
+    }
+}

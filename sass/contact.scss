@@ -106,6 +106,7 @@ header {
         height: 2px;
         background-color: #fff;
         border-radius: 1px;
+        transition: .3s;
     }
 
     .bar-top,
@@ -127,8 +128,9 @@ header {
 }
 
 .header-nav {
-    display: none;
-    width: 40%;
+    // display: none;
+    opacity: 0;
+    width: 0%;
     height: 100vh;
     min-height: 550px;
     position: absolute;
@@ -136,6 +138,7 @@ header {
     right: 0;
     z-index: 2;
     background-color: $btn-color;
+    transition: .3s;
 
     .header-nav-list {
         padding: 180px 0;
@@ -156,6 +159,7 @@ header {
         width: 100%;
     }
 }
+
 
 
 /*　fv------------------------------------------------------------*/

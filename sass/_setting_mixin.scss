@@ -67,3 +67,74 @@ $img_path:"../img/";
     }
 }
 
+
+// fade-animation
+// 
+.fade-animation {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.fade-animation.show {
+  opacity: 1;
+  transition: 1s;
+  transform: translateY(0px);
+}
+
+// jQ burger-btn
+.burger-btn-wp.cross {
+  .bar {
+    transition: .3s;
+  }
+
+  .bar-top {
+    transform: translate(10%, 5px) rotate(45deg);
+  }
+
+  .bar-mid {
+    opacity: 0;
+  }
+
+  .bar-bottom {
+    transform: translate(10%, -5px) rotate(-45deg);
+  }
+}
+
+// jQ
+.header-nav.open {
+  opacity: 1;
+  width: 40%;
+  transition: .3s;
+
+  @include mq {
+    width: 100%;
+  }
+}
+
+// jQ
+.bg-mask.open {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  opacity: .6;
+  z-index: 1;
+  transition: .3s;
+}
+
+body.hidden {
+  overflow: hidden;
+}
+
+// header-clone
+.header-clone{
+  background-color: $btn-color;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: -80px;
+  transition: top .3s;
+}
+.header-clone.open{
+  top: 0;
+}

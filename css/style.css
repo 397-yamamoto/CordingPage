@@ -1,4 +1,79 @@
 @charset "UTF-8";
+.fade-animation {
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+}
+
+.fade-animation.show {
+  opacity: 1;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.burger-btn-wp.cross .bar {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.burger-btn-wp.cross .bar-top {
+  -webkit-transform: translate(10%, 5px) rotate(45deg);
+          transform: translate(10%, 5px) rotate(45deg);
+}
+
+.burger-btn-wp.cross .bar-mid {
+  opacity: 0;
+}
+
+.burger-btn-wp.cross .bar-bottom {
+  -webkit-transform: translate(10%, -5px) rotate(-45deg);
+          transform: translate(10%, -5px) rotate(-45deg);
+}
+
+.header-nav.open {
+  opacity: 1;
+  width: 40%;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+@media screen and (max-width: 599px) {
+  .header-nav.open {
+    width: 100%;
+  }
+}
+
+.bg-mask.open {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  opacity: .6;
+  z-index: 1;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body.hidden {
+  overflow: hidden;
+}
+
+.header-clone {
+  background-color: #021128;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: -80px;
+  -webkit-transition: top .3s;
+  transition: top .3s;
+}
+
+.header-clone.open {
+  top: 0;
+}
+
 /*　base------------------------------------------------------------*/
 html {
   font-size: 62.5%;
@@ -98,6 +173,7 @@ a {
 
 /*　header------------------------------------------------------------*/
 header {
+  height: 80px;
   padding: 27px 0;
   position: absolute;
   top: 0;
@@ -151,6 +227,8 @@ header {
   height: 2px;
   background-color: #fff;
   border-radius: 1px;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .burger-btn-wp .bar-top,
@@ -171,8 +249,8 @@ header {
 }
 
 .header-nav {
-  display: none;
-  width: 40%;
+  opacity: 0;
+  width: 0%;
   height: 100vh;
   min-height: 550px;
   position: absolute;
@@ -180,6 +258,8 @@ header {
   right: 0;
   z-index: 2;
   background-color: #021128;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .header-nav .header-nav-list {

@@ -9,12 +9,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./css/style.css">
-<script src="./js/script.js"></script>
+
+<script src="./js/vendor/modernizr.custom.min.js"></script>
+<script src="./js/vendor/jquery-1.10.2.min.js"></script>
+<script src="./js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="./js/vendor/jquery.mousewheel.js"></script>
+<script src="./js/vendor/imagesloaded.pkgd.min.js"></script>
+<script src="./js/script.js" defer></script>
 </head>
 
 <body>
     <!-- header -->
-    <header id="header">
+    <header id="header" class="header">
         <div class="header-inner">
             <h1 class="header-logo"><a href="#"><img src="./images/site-logo.png" alt="会社ロゴ"></a></h1>
             <div class="burger-btn-wp">
@@ -37,7 +43,7 @@
             </ul>
         </nav>
     </header>
-    
+    <span class="bg-mask"></span>
 <main>
     <!-- fv -->
     <div class="fv">
@@ -55,7 +61,7 @@
     <section id="about">
         <div class="containerH">
             <div class="containerW">
-                <div class="about-inner">
+                <div class="about-inner fade-animation">
                     <h2 class="section-title">ABOUT US</h2>
                     <div class="about-txt">
                         「テクノロジーの力を証明する」をビジョンに掲げております。今後テクノロジーが重要視されていくこの時代に、テクノロジーを活用したコンサルティング事業などを通して、力を証明したいと考えています。
@@ -69,14 +75,14 @@
     <div class="section-wpH">
         <div class="containerW section-wp">
             <!-- works -->
-           <section id="works">
+           <section id="works" class="fade-animation">
                 <h2 class="section-title">WORKS</h2>
                 <img src="./images/works-img.jpg" alt="worksイメージ写真">
                 <div class="works-txt txt">COMPARSIONの制作実績を紹介します。</div>
                 <button class="btn">READ MORE</button>
            </section>
            <!-- culture -->
-            <section id="culture">
+            <section id="culture" class="fade-animation">
                 <h2 class="section-title">CULTURE</h2>
                 <img src="./images/culture-img.jpg" alt="cultureイメージ写真">
                 <div class="culture-txt txt">COMPARSIONの社内文化について紹介します。</div>
@@ -89,7 +95,7 @@
         <div class="containerH">
             <div class="containerW">
                 <h2 class="section-title">LATEST TOPICS</h2>
-                <ul class="topic-list">
+                <ul class="topic-list fade-animation">
                     <li class="topic-item">
                         <a href="#">
                             <time>2020.02.01</time>
@@ -117,7 +123,7 @@
     <section id="contact">
         <div class="containerH">
             <div class="containerW">
-                <div class="contact-inner">
+                <div class="contact-inner fade-animation">
                     <h2 class="section-title">CONTACT</h2>
                     <div class="contact-txt">
                         仕事の依頼、IRや採用についての連絡・お問い合わせはコンタクトページから承っております。<br>
@@ -125,8 +131,8 @@
                     </div>
                     <button class="btn">READ MORE</button>
                 </div>
-                <div class="contact-inner">
-                    <img src="./images/contact-img.jpg" alt="">
+                <div class="contact-inner fade-animation">
+                    <img src="./images/contact-img.jpg" alt="contactイメージ写真">
                 </div>
             </div>
         </div>

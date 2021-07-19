@@ -105,9 +105,16 @@ $img_path:"../img/";
   opacity: 1;
   width: 40%;
   transition: .3s;
-
+  @include mq(tab){
+    width: 50%;
+  }
   @include mq {
     width: 100%;
+  }
+  .header-nav-item{
+    a{
+      display: block;
+    }  
   }
 }
 
@@ -126,15 +133,3 @@ body.hidden {
   overflow: hidden;
 }
 
-// header-clone
-.header-clone{
-  background-color: $btn-color;
-  width: 100%;
-  position: fixed;
-  z-index: 2;
-  top: -80px;
-  transition: top .3s;
-}
-.header-clone.open{
-  top: 0;
-}
